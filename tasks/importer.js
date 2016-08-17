@@ -11,7 +11,7 @@ module.exports = function gruntTask(grunt) {
 			grunt.fail.warn("You need to specify layoutName and layoutLang");
 		}
 		plenty.setCreditials(options);
-		plenty.setDebug(true);
+		plenty.setDebug(false);
 
 		var requestString = 'request='+plenty.stringifyNestedObject({"requests":[{"_dataName":"TemplateImportTemplate", "_moduleName":"cms/template/import", "_searchParams":{}, "_writeParams":{"designName":options.layoutName, "lang":options.layoutLang, "importAll":false}, "_validateParams":{}, "_commandStack":[{"type":"write", "command":"writeFromDropbox"}], "_dataArray":{}, "_dataList":{}}], "meta":{"id":3}});
 
