@@ -13,9 +13,10 @@ module.exports = function gruntTask(grunt) {
 		plenty.setCreditials(options);
 		plenty.setDebug(false);
 
-		var requestString = 'request='+plenty.stringifyNestedObject({"requests":[{"_dataName":"TemplateImportTemplate", "_moduleName":"cms/template/import", "_searchParams":{}, "_writeParams":{"designName":options.layoutName, "lang":options.layoutLang, "importAll":false}, "_validateParams":{}, "_commandStack":[{"type":"write", "command":"writeFromDropbox"}], "_dataArray":{}, "_dataList":{}}], "meta":{"id":3}});
 
 		plenty.login(function(loginResult){
+			var requestString = 'request='+plenty.stringifyNestedObject({"requests":[{"_dataName":"TemplateImportTemplate", "_moduleName":"cms/template/import", "_searchParams":{}, "_writeParams":{"designName":options.layoutName, "lang":options.layoutLang, "importAll":false}, "_validateParams":{}, "_commandStack":[{"type":"write", "command":"writeFromDropbox"}], "_dataArray":{}, "_dataList":{}}], "meta":{"id":plenty.getUserID()}});
+
 			if(loginResult.success === true){
 
 				plenty.post("https://"+options.domain+"/plenty/api/ui.php",requestString, function(callResult){
