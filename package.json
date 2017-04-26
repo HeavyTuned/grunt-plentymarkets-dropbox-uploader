@@ -16,7 +16,7 @@
 		"url": "https://github.com/HeavyTuned/grunt-plentymarkets-dropbox-uploader/issues"
 	},
 	"dependencies": {
-		"node-plentymarkets-curl": ">=0.0.7"
+		"node-plentymarkets-curl": ">=0.0.8"
 	},
 	"devDependencies": {
 		"grunt": "^1.0.1",
