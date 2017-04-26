@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
 	'use strict';
 	/*
-	commadn to check for "in arbeit" dropbox imports
+	command to check for "in arbeit" dropbox imports
 	request:{"requests":[{"_dataName":"DropboxProcessingList", "_moduleName":"lib/dropbox", "_searchParams":{"source":"design/HTV3"}, "_writeParams":{}, "_validateParams":{}, "_commandStack":[{"type":"read", "command":"read"}], "_dataArray":{}, "_dataList":{}}], "meta":{"id":UserID, "token":"xyz"}}
 
 
@@ -20,6 +20,12 @@ module.exports = function (grunt) {
 		if(!options.layoutName || !options.layoutLang){
 			grunt.fail.warn("You need to specify layoutName and layoutLang");
 		}
+		if(options.domain != undefined){
+			if(options.domain.indexOf("http") == -1){
+				grunt.fail.warn("options.domain requires a full http / https path");
+			}
+		}
+
 		plenty.setCreditials(options);
 		plenty.setDebug(false);
 
