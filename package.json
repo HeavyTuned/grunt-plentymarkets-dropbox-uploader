@@ -1,6 +1,6 @@
 {
 	"name": "grunt-plentymarkets-dropbox-uploader",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "A grunt task for uploading layouts from dropbox to Plentymarkets",
 	"main": "Gruntfile.js",
 	"scripts": {
