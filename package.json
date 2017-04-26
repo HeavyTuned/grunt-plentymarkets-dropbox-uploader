@@ -1,25 +1,25 @@
 {
-  "name": "grunt-plentymarkets-dropbox-uploader",
-  "version": "0.0.7",
-  "description": "A grunt task for uploading layouts from dropbox to Plentymarkets",
-  "main": "Gruntfile.js",
-  "scripts": {
-    "test": "grunt test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "github.com:HeavyTuned/grunt-plentymarkets-dropbox-uploader.git"
-  },
-  "author": "Karol Kutrowski <it@heavy-tuned.de> (https://www.heavy-tuned.de/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HeavyTuned/grunt-plentymarkets-dropbox-uploader/issues"
-  },
-  "dependencies": {
-    "node-plentymarkets-curl": "^0.0.7"
-  },
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0"
-  }
+	"name": "grunt-plentymarkets-dropbox-uploader",
+	"version": "0.0.8",
+	"description": "A grunt task for uploading layouts from dropbox to Plentymarkets",
+	"main": "Gruntfile.js",
+	"scripts": {
+		"test": "grunt test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "github.com:HeavyTuned/grunt-plentymarkets-dropbox-uploader.git"
+	},
+	"author": "Karol Kutrowski <it@heavy-tuned.de> (https://www.heavy-tuned.de/)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/HeavyTuned/grunt-plentymarkets-dropbox-uploader/issues"
+	},
+	"dependencies": {
+		"node-plentymarkets-curl": ">=0.0.7"
+	},
+	"devDependencies": {
+		"grunt": "^1.0.1",
+		"grunt-contrib-jshint": "^1.0.0"
+	}
 }
