@@ -27,12 +27,6 @@ module.exports = function (grunt) {
 		}
 
 		plenty.setCreditials(options);
-		plenty.setDebug(false);
-
-		if (grunt.option('debug')) {
-			console.log("CSRF token: "+plenty.getUserToken());
-			console.log("Plenty UserId: "+plenty.getUserID());
-		}
 
 		plenty.login(function(loginResult){
 			var requestString = 'request='+plenty.stringifyNestedObject({
@@ -59,6 +53,12 @@ module.exports = function (grunt) {
 				}
 			});
 
+			if (grunt.option('debug')) {
+				console.log("CSRF token: "+plenty.getUserToken());
+				console.log("Plenty UserId: "+plenty.getUserID());
+				plenty.setDebug(true);
+			}
+
 			if(loginResult.success === true){
 				plenty.post(options.domain+"/plenty/api/ui.php",requestString, function(callResult){
 					done();
@@ -66,7 +66,9 @@ module.exports = function (grunt) {
 			}else{
 				try{
 					grunt.log.error(loginResult.exception.message);
-				}catch(exception){} /*if no error object is passed*/
+				}catch(exception){
+					grunt.log.error(exception.message);
+				} /*if no error object is passed*/
 			}
 		});
 
