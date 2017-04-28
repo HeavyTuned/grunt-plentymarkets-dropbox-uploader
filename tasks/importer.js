@@ -29,8 +29,35 @@ module.exports = function (grunt) {
 		plenty.setCreditials(options);
 		plenty.setDebug(false);
 
+		if (grunt.option('debug')) {
+			console.log("CSRF token: "+plenty.getUserToken());
+			console.log("Plenty UserId: "+plenty.getUserID());
+		}
+
 		plenty.login(function(loginResult){
-			var requestString = 'request='+plenty.stringifyNestedObject({"requests":[{"_dataName":"TemplateImportTemplate", "_moduleName":"cms/template/import", "_searchParams":{}, "_writeParams":{"designName":options.layoutName, "lang":options.layoutLang, "importAll":false}, "_validateParams":{}, "_commandStack":[{"type":"write", "command":"writeFromDropbox"}], "_dataArray":{}, "_dataList":{}}], "meta":{"token":plenty.getUserToken(),"id":plenty.getUserID()}});
+			var requestString = 'request='+plenty.stringifyNestedObject({
+				"requests": [{
+					"_dataName": "TemplateImportTemplate",
+					"_moduleName": "cms/template/import",
+					"_searchParams": {},
+					"_writeParams": {
+						"designName": options.layoutName,
+						"lang": options.layoutLang,
+						"importAll": false
+					},
+					"_validateParams": {},
+					"_commandStack": [{
+						"type": "write",
+						"command": "writeFromDropbox"
+					}],
+					"_dataArray": {},
+					"_dataList": {}
+				}],
+				"meta": {
+					"token": plenty.getUserToken(),
+					"id": plenty.getUserID()
+				}
+			});
 
 			if(loginResult.success === true){
 				plenty.post(options.domain+"/plenty/api/ui.php",requestString, function(callResult){

@@ -1,6 +1,6 @@
 {
 	"name": "grunt-plentymarkets-dropbox-uploader",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"description": "A grunt task for uploading layouts from dropbox to Plentymarkets",
 	"main": "Gruntfile.js",
 	"scripts": {
@@ -16,7 +16,7 @@
 		"url": "https://github.com/HeavyTuned/grunt-plentymarkets-dropbox-uploader/issues"
 	},
 	"dependencies": {
-		"node-plentymarkets-curl": ">=0.0.9"
+		"node-plentymarkets-curl": ">=0.0.10"
 	},
 	"devDependencies": {
 		"grunt": "^1.0.1",
